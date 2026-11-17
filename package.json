@@ -1,0 +1,24 @@
+{
+  "name": "devops-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/index.html src/collections.html src/membership.html src/services.html src/contact.html --dist-dir dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/l1f23bsse0328/readers-haven-library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/l1f23bsse0328/readers-haven-library/issues"
+  },
+  "homepage": "https://github.com/l1f23bsse0328/readers-haven-library#readme",
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}
