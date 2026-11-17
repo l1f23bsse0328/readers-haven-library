@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,90 +8,109 @@
     <title>Contact | Readers Haven</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
+
 <body>
-<header class="header">
-    <nav class="navbar container">
-        <a href="index.html" class="logo">Readers<span>Haven.</span></a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="collections.html">Collections</a></li>
-            <li><a href="membership.html">Membership</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html" class="active">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <header class="header">
+        <nav class="navbar container">
+            <a href="index.html" class="logo">Readers<span>Haven.</span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="collections.html">Collections</a></li>
+                <li><a href="membership.html">Membership</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-    <section class="hero">
-        <div class="container hero-text">
-            <p class="eyebrow">GET IN TOUCH</p>
-            <h1>We Would Love to <span>Hear From You.</span></h1>
-            <p>Have a question or suggestion? Send us a message.</p>
-        </div>
-    </section>
-
-    <section class="section-padding">
-        <div class="container">
-            <div class="section-heading">
-                <p class="eyebrow">CONTACT US</p>
-                <h2>Let's Start a Conversation</h2>
+    <main>
+        <section class="hero contact-hero">
+            <div class="container hero-text">
+                <p class="eyebrow">GET IN TOUCH</p>
+                <h1>We Would Love to <span>Hear From You.</span></h1>
+                <p>Have a question or suggestion? Send us a message.</p>
             </div>
+        </section>
 
-            <div class="contact-layout">
-                <div class="feature-card contact-info">
-                    <div class="feature-icon">📍</div>
-                    <h3>Visit Us</h3>
-                    <p>Readers Haven Library</p>
-
-                    <br>
-
-                    <div class="feature-icon">✉️</div>
-                    <h3>Email Us</h3>
-                    <p>info@readershaven.com</p>
-
-                    <br>
-
-                    <div class="feature-icon">📞</div>
-                    <h3>Call Us</h3>
-                    <p>Contact our support team for assistance.</p>
+        <section class="section-padding contact-section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">CONTACT US</p>
+                    <h2>Let's Start a Conversation</h2>
                 </div>
 
-                <form class="contact-form" id="contactForm">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name"
-                        placeholder="Enter your name" required>
+                <div class="contact-layout">
+                    <div class="feature-card contact-info">
+                        <div class="info-item">
+                            <div class="feature-icon">📍</div>
+                            <div class="info-text">
+                                <h3>Visit Us</h3>
+                                <p>Readers Haven Library</p>
+                            </div>
+                        </div>
 
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email"
-                        placeholder="Enter your email" required>
+                        <div class="info-item">
+                            <div class="feature-icon">✉️</div>
+                            <div class="info-text">
+                                <h3>Email Us</h3>
+                                <p><a href="mailto:info@readershaven.com">info@readershaven.com</a></p>
+                            </div>
+                        </div>
 
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject"
-                        placeholder="Enter message subject" required>
+                        <div class="info-item">
+                            <div class="feature-icon">📞</div>
+                            <div class="info-text">
+                                <h3>Call Us</h3>
+                                <p>Contact our support team for assistance.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" rows="5"
-                        placeholder="Write your message..." required></textarea>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" placeholder="Enter your name"
+                                    autocomplete="name" required>
+                            </div>
 
-                    <button type="submit" class="btn btn-primary">
-                        Send Message
-                    </button>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email"
+                                    autocomplete="email" required>
+                            </div>
+                        </div>
 
-                    <p id="formMessage" aria-live="polite"></p>
-                </form>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Enter message subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Write your message..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            Send Message
+                        </button>
+
+                        <p id="formMessage" aria-live="polite"></p>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
+    </main>
 
-<footer class="footer">
-    <div class="container footer-content">
-        <a href="index.html" class="logo">Readers<span>Haven.</span></a>
-        <p>© 2026 Readers Haven. All rights reserved.</p>
-    </div>
-</footer>
-<script src="./js/app.js" type="module"></script>
+    <footer class="footer">
+        <div class="container footer-content">
+            <a href="index.html" class="logo">Readers<span>Haven.</span></a>
+            <p>© 2026 Readers Haven. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="./js/app.js" type="module"></script>
 </body>
+
 </html>
