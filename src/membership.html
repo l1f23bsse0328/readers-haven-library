@@ -1,88 +1,782 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore Readers Haven membership plans.">
+
+    <meta name="description" content="Join Readers Haven and explore our membership plans.">
+
     <title>Membership | Readers Haven</title>
-    <link rel="stylesheet" href="../styles/style.css">
+
+    <style>
+
+        * {
+
+            margin: 0;
+
+            padding: 0;
+
+            box-sizing: border-box;
+
+            font-family: Arial, sans-serif;
+
+        }
+
+        body {
+
+            background: #f8f7f3;
+
+            color: #333;
+
+            line-height: 1.6;
+
+        }
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1150px;
+
+            margin: auto;
+
+        }
+
+        .header {
+
+            background: #263b32;
+
+            padding: 18px 0;
+
+        }
+
+        .navbar {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+        .logo {
+
+            color: white;
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            text-decoration: none;
+
+        }
+
+        .logo span {
+
+            color: #d9ad65;
+
+        }
+
+        .nav-links {
+
+            display: flex;
+
+            list-style: none;
+
+            gap: 25px;
+
+        }
+
+        .nav-links a {
+
+            color: white;
+
+            text-decoration: none;
+
+        }
+
+        .nav-links a:hover,
+
+        .nav-links a.active {
+
+            color: #d9ad65;
+
+        }
+
+        .menu-toggle {
+
+            display: none;
+
+            background: none;
+
+            border: none;
+
+            color: white;
+
+            font-size: 25px;
+
+            cursor: pointer;
+
+        }
+
+        .hero {
+
+            background: #e9e4d9;
+
+            padding: 90px 20px;
+
+            text-align: center;
+
+        }
+
+        .eyebrow {
+
+            color: #a17a3f;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+
+        }
+
+        .hero h1 {
+
+            font-size: 45px;
+
+            color: #263b32;
+
+            margin-bottom: 15px;
+
+        }
+
+        .hero h1 span {
+
+            color: #b58b4e;
+
+        }
+
+        .hero p {
+
+            margin-bottom: 25px;
+
+        }
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 12px 25px;
+
+            border-radius: 5px;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+
+        }
+
+        .btn-primary {
+
+            background: #263b32;
+
+            color: white;
+
+        }
+
+        .btn-primary:hover {
+
+            background: #b58b4e;
+
+        }
+
+        .btn-outline {
+
+            border: 2px solid #263b32;
+
+            color: #263b32;
+
+        }
+
+        .btn-outline:hover {
+
+            background: #263b32;
+
+            color: white;
+
+        }
+
+        .section-padding {
+
+            padding: 65px 0;
+
+        }
+
+        .section-heading {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+        }
+
+        .section-heading h2 {
+
+            color: #263b32;
+
+            font-size: 32px;
+
+            margin-bottom: 10px;
+
+        }
+
+        .feature-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+
+        }
+
+        .feature-card {
+
+            background: white;
+
+            padding: 30px 22px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+
+        }
+
+        .feature-card:hover {
+
+            transform: translateY(-7px);
+
+        }
+
+        .feature-icon {
+
+            font-size: 40px;
+
+            margin-bottom: 15px;
+
+        }
+
+        .feature-card h3 {
+
+            color: #263b32;
+
+            font-size: 23px;
+
+            margin-bottom: 12px;
+
+        }
+
+        .feature-card h2 {
+
+            color: #b58b4e;
+
+            margin-bottom: 18px;
+
+        }
+
+        .feature-card p {
+
+            margin: 10px 0;
+
+            color: #555;
+
+        }
+
+        .popular {
+
+            border: 2px solid #b58b4e;
+
+        }
+
+        .popular-label {
+
+            color: #b58b4e;
+
+            font-weight: bold;
+
+        }
+
+        .feature-card .btn {
+
+            margin-top: 15px;
+
+        }
+
+        .cta {
+
+            background: #e9e4d9;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+        }
+
+        .cta h2 {
+
+            color: #263b32;
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+
+        }
+
+        .footer {
+
+            background: #263b32;
+
+            color: white;
+
+            padding: 25px 0;
+
+        }
+
+        .footer-content {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+        @media (max-width: 768px) {
+
+            .navbar {
+
+                flex-wrap: wrap;
+
+            }
+
+            .menu-toggle {
+
+                display: block;
+
+            }
+
+            .nav-links {
+
+                display: none;
+
+                flex-direction: column;
+
+                width: 100%;
+
+                text-align: center;
+
+                padding-top: 20px;
+
+            }
+
+            .nav-links.show {
+
+                display: flex;
+
+            }
+
+            .feature-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .hero h1 {
+
+                font-size: 32px;
+
+            }
+
+            .footer-content {
+
+                flex-direction: column;
+
+                gap: 15px;
+
+                text-align: center;
+
+            }
+
+        }
+
+    </style>
+
 </head>
+
 <body>
+
 <header class="header">
+
     <nav class="navbar container">
-        <a href="index.html" class="logo">Readers<span>Haven.</span></a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+
+        <a href="index.html" class="logo">
+
+            Readers<span>Haven.</span>
+
+        </a>
+
+        <button class="menu-toggle" id="menuToggle"
+
+            aria-label="Toggle navigation"
+
+            aria-expanded="false"
+
+            aria-controls="navLinks">
+
+            ☰
+
+        </button>
+
         <ul class="nav-links" id="navLinks">
+
             <li><a href="index.html">Home</a></li>
+
             <li><a href="collections.html">Collections</a></li>
+
             <li><a href="membership.html" class="active">Membership</a></li>
+
             <li><a href="services.html">Services</a></li>
+
             <li><a href="contact.html">Contact</a></li>
+
         </ul>
+
     </nav>
+
 </header>
 
 <main>
+
     <section class="hero">
-        <div class="container hero-text">
+
+        <div class="container">
+
             <p class="eyebrow">BECOME A MEMBER</p>
+
             <h1>Make Reading a <span>Daily Habit.</span></h1>
-            <p>Choose a membership plan and become part of our reading community.</p>
+
+            <p>
+
+                Join Readers Haven and discover a world of knowledge,
+
+                imagination and learning.
+
+            </p>
+
+            <a href="#plans" class="btn btn-primary">Explore Plans</a>
+
         </div>
+
     </section>
 
     <section class="section-padding">
+
         <div class="container">
+
             <div class="section-heading">
-                <p class="eyebrow">MEMBERSHIP OPTIONS</p>
-                <h2>Choose Your Plan</h2>
+
+                <p class="eyebrow">MEMBER BENEFITS</p>
+
+                <h2>Why Join Readers Haven?</h2>
+
+                <p>Enjoy special benefits designed for every reader.</p>
+
             </div>
 
             <div class="feature-grid">
+
                 <article class="feature-card">
-                    <div class="feature-icon">🌱</div>
-                    <h3>Basic</h3>
-                    <h2>Free</h2>
-                    <p>Access to selected resources.</p>
-                    <p>Community updates.</p>
-                    <p>Reading recommendations.</p>
-                    <br>
-                    <a href="contact.html" class="btn btn-outline">Get Started</a>
+
+                    <div class="feature-icon">📚</div>
+
+                    <h3>More Books</h3>
+
+                    <p>Explore a wide range of books and reading resources.</p>
+
                 </article>
 
                 <article class="feature-card">
-                    <div class="feature-icon">⭐</div>
-                    <h3>Standard</h3>
-                    <h2>Popular</h2>
-                    <p>Extended collection access.</p>
-                    <p>Member reading events.</p>
-                    <p>Priority support.</p>
-                    <br>
-                    <a href="contact.html" class="btn btn-primary">Join Now</a>
+
+                    <div class="feature-icon">🎁</div>
+
+                    <h3>Special Offers</h3>
+
+                    <p>Get access to exclusive membership offers and discounts.</p>
+
                 </article>
 
                 <article class="feature-card">
-                    <div class="feature-icon">👑</div>
-                    <h3>Premium</h3>
-                    <h2>Exclusive</h2>
-                    <p>Premium reading resources.</p>
-                    <p>Exclusive community events.</p>
-                    <p>Personalized recommendations.</p>
-                    <br>
-                    <a href="contact.html" class="btn btn-outline">Join Now</a>
+
+                    <div class="feature-icon">👥</div>
+
+                    <h3>Reading Community</h3>
+
+                    <p>Connect with readers and share your experiences.</p>
+
                 </article>
+
             </div>
+
         </div>
+
     </section>
+
+    <section class="section-padding" id="plans">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">MEMBERSHIP OPTIONS</p>
+
+                <h2>Choose Your Plan</h2>
+
+                <p>Find the membership that matches your reading journey.</p>
+
+            </div>
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">🌱</div>
+
+                    <h3>Basic</h3>
+
+                    <h2>Free</h2>
+
+                    <p>✓ Selected reading resources</p>
+
+                    <p>✓ Community updates</p>
+
+                    <p>✓ Reading recommendations</p>
+
+                    <p>✓ Monthly newsletter</p>
+
+                    <a href="contact.html" class="btn btn-outline">Get Started</a>
+
+                </article>
+
+                <article class="feature-card popular">
+
+                    <div class="feature-icon">⭐</div>
+
+                    <p class="popular-label">MOST POPULAR</p>
+
+                    <h3>Standard</h3>
+
+                    <h2>Rs. 999/month</h2>
+
+                    <p>✓ Extended collection access</p>
+
+                    <p>✓ Member reading events</p>
+
+                    <p>✓ Priority support</p>
+
+                    <p>✓ Special member discounts</p>
+
+                    <a href="contact.html" class="btn btn-primary">Join Now</a>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">👑</div>
+
+                    <h3>Premium</h3>
+
+                    <h2>Rs. 1999/month</h2>
+
+                    <p>✓ All Standard benefits</p>
+
+                    <p>✓ Premium reading resources</p>
+
+                    <p>✓ Exclusive community events</p>
+
+                    <p>✓ Personalized recommendations</p>
+
+                    <a href="contact.html" class="btn btn-outline">Join Premium</a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section-padding">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">OUR PROMISE</p>
+
+                <h2>A Better Reading Experience</h2>
+
+            </div>
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">🔖</div>
+
+                    <h3>Discover New Books</h3>
+
+                    <p>Find interesting books according to your interests.</p>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">💡</div>
+
+                    <h3>Learn Every Day</h3>
+
+                    <p>Improve your knowledge through regular reading.</p>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <div class="feature-icon">❤️</div>
+
+                    <h3>Reader Support</h3>
+
+                    <p>Get help and support whenever you need it.</p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="section-padding">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">HAVE QUESTIONS?</p>
+
+                <h2>Frequently Asked Questions</h2>
+
+            </div>
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+
+                    <h3>Can I join for free?</h3>
+
+                    <p>Yes! You can start with our free Basic membership plan.</p>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <h3>Can I change my plan?</h3>
+
+                    <p>Contact our support team to ask about changing your membership.</p>
+
+                </article>
+
+                <article class="feature-card">
+
+                    <h3>How can I join?</h3>
+
+                    <p>Select your preferred plan and contact us through our Contact page.</p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="cta">
+
+        <div class="container">
+
+            <p class="eyebrow">START YOUR JOURNEY</p>
+
+            <h2>Become Part of Readers Haven Today!</h2>
+
+            <p>Choose your plan and make every page count.</p>
+
+            <br>
+
+            <a href="#plans" class="btn btn-primary">Join Our Community</a>
+
+        </div>
+
+    </section>
+
 </main>
 
 <footer class="footer">
+
     <div class="container footer-content">
-        <a href="index.html" class="logo">Readers<span>Haven.</span></a>
+
+        <a href="index.html" class="logo">
+
+            Readers<span>Haven.</span>
+
+        </a>
+
         <p>© 2026 Readers Haven. All rights reserved.</p>
+
     </div>
+
 </footer>
-<script src="./js/app.js" type="module"></script>
+
+<script>
+
+    const menuToggle = document.getElementById("menuToggle");
+
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function() {
+
+        navLinks.classList.toggle("show");
+
+        const isExpanded = navLinks.classList.contains("show");
+
+        menuToggle.setAttribute("aria-expanded", isExpanded);
+        
+
+    });
+
+</script>
+
 </body>
+
 </html>
