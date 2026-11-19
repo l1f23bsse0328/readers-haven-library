@@ -1,30 +1,33 @@
-
 # Stage 1: Build the application
 FROM node:22-alpine AS builder
 
+# Set working directory
 WORKDIR /app
 
-# Copy package files
+# Copy package configuration files
 COPY package*.json ./
 
-# Install dependencies
+# Install project dependencies
 RUN npm ci
 
-# Copy project files
-COPY . .
+# Copy HTML source files
+COPY src/ ./src/
 
-# Build production files
+# Copy shared CSS files
+COPY styles/ ./styles/
+
+# Build optimized production files
 RUN npm run build
 
 
-# Stage 2: Production server
-FROM nginx:1.27-alpine AS production
+# Stage 2: Serve the application using Nginx
+FROM nginx:1.27-alpine
 
-# Copy built files from builder
+# Copy production build from the builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Expose web server port
+# Expose port 80 for web traffic
 EXPOSE 80
 
-# Start Nginx
+# Start Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
